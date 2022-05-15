@@ -1,4 +1,4 @@
-package com.visifan.axel.termalLabelGen;
+package com.visifan.axel.termalLabelGen.ByPrinterService;
 
 import javax.swing.*;
 import java.awt.*;

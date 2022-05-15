@@ -31,7 +31,7 @@
                     <archive>
                         <index>true</index>
                         <manifest>
-                            <mainClass>com.visifan.axel.termalLabelGen.TicketLabelGenerator</mainClass>
+                            <mainClass>com.visifan.axel.termalLabelGen.ByPrinterService.TicketLabelGenerator</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -44,7 +44,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.visifan.axel.termalLabelGen.TicketLabelGenerator</mainClass>
+                            <mainClass>com.visifan.axel.termalLabelGen.ByPrinterService.TicketLabelGenerator</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -56,6 +56,22 @@
         </plugins>
     </build>
     <dependencies>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.13.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.w3blog</groupId>
+            <artifactId>zebra-zpl</artifactId>
+            <version>0.0.1</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>

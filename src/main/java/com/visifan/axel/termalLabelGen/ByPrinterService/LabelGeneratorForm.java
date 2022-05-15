@@ -1,6 +1,7 @@
-package com.visifan.axel.termalLabelGen;
+package com.visifan.axel.termalLabelGen.ByPrinterService;
 
 import com.google.zxing.WriterException;
+import com.visifan.axel.termalLabelGen.QRCode.QRGenerator;
 
 import javax.print.*;
 import javax.print.attribute.HashPrintRequestAttributeSet;

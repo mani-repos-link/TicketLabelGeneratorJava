@@ -1,6 +1,7 @@
-package com.visifan.axel.termalLabelGen;
+package com.visifan.axel.termalLabelGen.QRCode;
 
 import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
@@ -9,6 +10,8 @@ import com.google.zxing.qrcode.QRCodeWriter;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.EnumMap;
+import java.util.Map;
 
 public class QRGenerator {
 
@@ -26,8 +29,11 @@ public class QRGenerator {
     }
 
     public static BufferedImage generateQRCodeToBitMatrix(String text, int width, int height) throws WriterException, IOException {
+        Map<EncodeHintType, Object> hints = new EnumMap<EncodeHintType, Object>(EncodeHintType.class);
+//        hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
+        hints.put(EncodeHintType.MARGIN, 0);
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
-        BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height);
+        BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height, hints);
         ByteArrayOutputStream pngOutputStream = new ByteArrayOutputStream();
         return MatrixToImageWriter.toBufferedImage(bitMatrix);
     }
