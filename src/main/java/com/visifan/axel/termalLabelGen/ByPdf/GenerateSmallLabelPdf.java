@@ -1,18 +1,10 @@
 package com.visifan.axel.termalLabelGen.ByPdf;
 
-import com.google.zxing.WriterException;
-//import com.itextpdf.text.*;
-//import com.itextpdf.text.DocumentException;
-//import com.itextpdf.text.Document;
-//import com.itextpdf.text.Image;
-//import com.itextpdf.text.Rectangle;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 import com.visifan.axel.termalLabelGen.QRCode.QRGenerator;
 
-import com.itextpdf.text.pdf.events.IndexEvents;
-import com.itextpdf.text.pdf.events.PdfPageEventForwarder;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -24,7 +16,7 @@ import java.io.IOException;
 // As the measurement unit in PDF is the user unit, and as 1 inch corresponds with 72
 // user units, the rectangle will be 3 x 72 user units wide and 5 by 72 user units high;
 
-public class GenerateLabelPdf2 {
+public class GenerateSmallLabelPdf {
     static final int pageWidth = cmToDPI(2.1);
     static final int pageHeight = cmToDPI(3.6);
 
@@ -57,7 +49,7 @@ public class GenerateLabelPdf2 {
         image.setAlignment(Element.ALIGN_CENTER);
         image.setRotationDegrees(90);
         document.add(image);
-        Font f = new Font(Font.FontFamily.TIMES_ROMAN,7.0f, Font.NORMAL);
+        Font f = new Font(Font.FontFamily.TIMES_ROMAN,6.0f, Font.NORMAL);
         Paragraph p = new Paragraph("A-0001-000161_05-06_2211800002", f);
         p.setAlignment(Element.ALIGN_CENTER);
         document.add(p);
